@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+/* Apply Tailwind utility classes directly */
+
+html {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply box-border bg-gray-900 text-gray-100; /* Not valid in regular CSS, but valid in Tailwind CLI with JIT mode */
+}
+
+/* Use Tailwind utility classes for styling */
+.btn-primary {
+  @apply bg-cyan-600 font-semibold text-white md:mx-0 mx-auto rounded-full py-3 px-6 flex items-center gap-2;
+}
+
+/* Note: Pseudo-elements and complex selectors cannot be handled directly with Tailwind's utility classes. You might need to use regular CSS for such cases. */
+
+/* Styling pseudo-element using regular CSS */
+.aboutImg::after {
+  content: '';
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0.5rem;
+  transform: rotate(12deg);
+  height: 100%;
+  position: absolute;
+  background-color: #4a5568;
+  z-index: -10;
+}
+
+/* Styles for specific elements */
+.swiper-pagination-bullet {
+  @apply bg-white; /* This might not work directly, as Tailwind doesn't use @apply for arbitrary class names */
+}
+
+input,
+textarea {
+  @apply bg-gray-700 outline-none rounded-lg p-3; /* Not valid in regular CSS, but valid in Tailwind CLI with JIT mode */
+}
+
+/* Placeholder styling */
+::placeholder {
+  @apply text-lg; /* Not valid in regular CSS, but valid in Tailwind CLI with JIT mode */
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-cyan-600; /* Not valid in regular CSS, but valid in Tailwind CLI with JIT mode */
+}
